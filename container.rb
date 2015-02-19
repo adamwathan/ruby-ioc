@@ -54,7 +54,7 @@ class Container
     def resolve_class(key)
       args = []
       key.instance_method(:initialize).parameters.map(&:last).each do |arg|
-        args << self.make(arg)
+        args << make(arg)
       end
       key.new(*args)
     end
